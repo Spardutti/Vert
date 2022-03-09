@@ -21,12 +21,13 @@ const SingleMonth = () => {
       setActiveMonth(month);
       getActivitiesFromMonth(month);
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activities]);
 
   /* FETCH THE ACTIVITIES FROM THE SPECIFIED MONTH */
   const getActivitiesFromMonth = (month) => {
     let uniqueActivities = [];
-    activities.map((elem) => {
+    activities.forEach((elem) => {
       const activityMonth = DateTime.fromJSDate(
         new Date(elem.start_date)
       ).monthLong;
@@ -42,7 +43,7 @@ const SingleMonth = () => {
       <Heading textAlign={"center"} mb={50}>
         {activeMonth} Activities
       </Heading>
-      {monthActivities ? (
+      {monthActivities && monthActivities.length > 0 ? (
         monthActivities.map((elem, index) => {
           return (
             <Box p={10} key={index}>

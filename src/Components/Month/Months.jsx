@@ -1,13 +1,4 @@
-import {
-  Box,
-  Divider,
-  Grid,
-  GridItem,
-  Heading,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Text, VStack } from "@chakra-ui/react";
 import { Duration } from "luxon";
 import { DateTime } from "luxon";
 import React, { useEffect, useState } from "react";
@@ -16,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import LoadingSpinner from "../Spinner/Spinner";
 
+/* DISPLAY ALL MONTHS THE USER HAVE ACTIVITY IN */
 const Months = () => {
   const activities = useSelector((state) => state.activity);
   const [months, setMonths] = useState([]);
@@ -24,7 +16,7 @@ const Months = () => {
   /* GET UNIQUE MONTHS FROM ACTIVITIES */
   const getMonths = () => {
     const uniqueMonths = [];
-    activities.map((elem) => {
+    activities.forEach((elem) => {
       const month = DateTime.fromJSDate(new Date(elem.start_date)).monthLong;
       if (uniqueMonths.indexOf(month) === -1) uniqueMonths.push(month);
     });
@@ -35,6 +27,7 @@ const Months = () => {
     if (activities) {
       getMonths();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activities]);
 
   /* DISPLAY EACH MONTH WITH THE TOTAL VALUES */
@@ -44,7 +37,7 @@ const Months = () => {
     let time = 0;
     let duration = 0;
 
-    activities.map((elem) => {
+    activities.forEach((elem) => {
       const month = DateTime.fromJSDate(new Date(elem.start_date)).monthLong;
       if (month === months) {
         distance = distance + elem.distance;

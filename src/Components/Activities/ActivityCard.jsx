@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { DateTime, Duration } from "luxon";
 import { useSelector } from "react-redux";
 
-// CARD FOR DISPLAYING EACH ACTIVITY
+// DISPLAY EACH ACTIVITIY IN A CARD
 const ActivityCard = ({ activity }) => {
   const { distance, name, start_date, total_elevation_gain, elapsed_time } =
     activity;

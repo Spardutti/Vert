@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "../Layout/Layout";
-import { useGetActivity } from "../../Api/Activity/get_activity";
-import { useDispatch, useSelector } from "react-redux";
-import { setActivities } from "../../store/Reducers/activityReducer";
+import { useSelector } from "react-redux";
 import ActivityCard from "./ActivityCard";
 import LoadingSpinner from "../Spinner/Spinner";
 import { Box, Heading } from "@chakra-ui/react";
 
+/* GET USER ACTIVITIES FROM THE STORE AND DISPLAY A CARD FOR EACH OF THEM */
 const Activities = () => {
-  const dispatch = useDispatch();
   const activities = useSelector((state) => state.activity);
 
   const ShowActivityCard = () => {

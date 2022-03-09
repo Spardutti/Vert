@@ -11,11 +11,7 @@ webapi that consume information from strava, to display the activities of a user
 ```
 npm install
 
-```
-
-```
 npm start
-
 ```
 
-navigate to localhost:3000
+if your web browser does not open automatically, please navigate to (localhost:3000)[localhost:3000]

@@ -19,8 +19,10 @@ function App() {
   /* MAKE REQUEST FOR TOKEN */
   const { data: access_token } = useRefreshToken();
 
+  /* GET THE USER ACTIVITY FROM STRAVA */
   const { data, refetch } = useGetActivity(token);
 
+  /* GET ATHLETE INFO */
   const { data: Athlete, refetch: getAthlete } = useGetAthlete(token);
 
   /* WAIT FOR TOKEN BEFORE FETCHING DATA */

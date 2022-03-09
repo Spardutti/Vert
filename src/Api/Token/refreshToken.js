@@ -5,7 +5,7 @@ const url = "https://www.strava.com/oauth";
 
 /* REFRESH TOKEN  AND GET TOKEN*/
 const refreshToken = () => {
-  /* WHEN DEPLOYED IT WOULD USE ENV */
+  /* WHEN DEPLOYED I WOULD USE ENV */
   // const client_id = process.env.REACT_APP_CLIENT_ID;
   // const client_secret = process.env.REACT_APP_CLIENT_SECRET;
   // const refresh_token = process.env.REACT_APP_REFRESH_TOKEN;

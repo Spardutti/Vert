@@ -7,10 +7,11 @@ import { GiPathDistance } from "react-icons/gi";
 import { GiMountainRoad } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 
+/* DISPLAY A WELCOME SCREEN */
 const Home = () => {
   const MotionHeading = motion(Heading);
 
-  /* DISPLAY AND ANIMATE TITLE */
+  /* DISPLAYS AND ANIMATE TITLE */
   const Title = () => (
     <HStack
       fontWeight={"bold"}
@@ -50,6 +51,7 @@ const Home = () => {
     </HStack>
   );
 
+  /* DISPLAY SOME BASIC INFO ABOUT THE PAGE */
   const Content = () => (
     <Stack mt={20} align="center">
       <Heading size={"md"}>
@@ -94,6 +96,7 @@ const Home = () => {
     </Stack>
   );
 
+  /* DISPLAY A BUTTON THAT WILL NAVIGATE TO ANOTHER PAGE */
   const GetStarted = () => {
     const navigate = useNavigate();
     return (
