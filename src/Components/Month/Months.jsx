@@ -82,6 +82,7 @@ const Months = () => {
         <LoadingSpinner />
       ) : (
         <VStack justify={"space-around"} h={700}>
+          <Heading mb={50}>Monthly Activity</Heading>
           {months.slice(0, 3).map((month, index) => {
             return (
               <Box
@@ -97,6 +98,7 @@ const Months = () => {
                   textAlign="center"
                   onClick={() => navigate(`/month?month=${month}`)}
                   cursor="pointer"
+                  color={"#FF6327"}
                 >
                   {month}
                 </Heading>

@@ -32,7 +32,8 @@ const ActivityCard = ({ activity }) => {
 
   return (
     <Grid
-      templateColumns={"2fr 8fr 2fr"}
+      mx="auto"
+      templateColumns={"2fr 8fr "}
       w={600}
       p={5}
       boxShadow="md"
@@ -40,7 +41,7 @@ const ActivityCard = ({ activity }) => {
       borderRadius={"base"}
     >
       <GridItem w={20} h={40}>
-        <Avatar name={athlete.firstName}></Avatar>
+        <Avatar name={athlete.firstName} bg="#FF6327" color="white"></Avatar>
       </GridItem>
       <GridItem>
         <Heading size={"md"}>
@@ -50,7 +51,9 @@ const ActivityCard = ({ activity }) => {
           {date.monthLong} {date.day}, {date.year} at {date.hour}:{date.minute}{" "}
           {date.hour > 12 ? "PM" : "AM"}
         </Text>
-        <Heading fontWeight={"bold"}>{name}</Heading>
+        <Heading fontWeight={"bold"} color="#FF6327">
+          {name}
+        </Heading>
         <Grid templateColumns={"repeat(3, 3fr)"} w={60}>
           <GridItem>
             <Box>

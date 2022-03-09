@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { DateTime } from "luxon";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -7,15 +7,23 @@ import ActivityCard from "../Activities/ActivityCard";
 import Layout from "../Layout/Layout";
 import LoadingSpinner from "../Spinner/Spinner";
 
+/* DISPLAY SINGLE MONTH ACTIVITIES */
 const SingleMonth = () => {
   const [searchParams] = useSearchParams();
   const activities = useSelector((state) => state.activity);
   const [monthActivities, setMonthActivities] = useState();
+  const [activeMonth, setActiveMonth] = useState();
+
+  /* GET THE MONTH FROM THE URL */
   useEffect(() => {
     const month = searchParams.get("month");
-    if (month) getActivitiesFromMonth(month);
+    if (month) {
+      setActiveMonth(month);
+      getActivitiesFromMonth(month);
+    }
   }, []);
 
+  /* FETCH THE ACTIVITIES FROM THE SPECIFIED MONTH */
   const getActivitiesFromMonth = (month) => {
     let uniqueActivities = [];
     activities.map((elem) => {
@@ -31,6 +39,9 @@ const SingleMonth = () => {
 
   return (
     <Layout>
+      <Heading textAlign={"center"} mb={50}>
+        {activeMonth} Activities
+      </Heading>
       {monthActivities ? (
         monthActivities.map((elem, index) => {
           return (

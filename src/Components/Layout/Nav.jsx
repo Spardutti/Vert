@@ -1,4 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const Nav = () => {
 
   return (
     <HStack
-      bg={"darkgrey"}
+      bg={"#FF6327"}
       pos="fixed"
       top={0}
       left={0}
@@ -18,16 +18,30 @@ const Nav = () => {
       fontSize={20}
       fontWeight={"semibold"}
       zIndex={100}
+      color="white"
     >
-      <Text cursor={"pointer"} onClick={() => navigate("/")}>
+      <Button
+        colorScheme={"whiteAlpha"}
+        cursor={"pointer"}
+        onClick={() => navigate("/")}
+        _hover={{ scale: 2 }}
+      >
         Home
-      </Text>
-      <Text cursor={"pointer"} onClick={() => navigate("/activity")}>
+      </Button>
+      <Button
+        colorScheme={"whiteAlpha"}
+        cursor={"pointer"}
+        onClick={() => navigate("/activity")}
+      >
         Activity
-      </Text>
-      <Text cursor={"pointer"} onClick={() => navigate("/monthly")}>
+      </Button>
+      <Button
+        colorScheme={"whiteAlpha"}
+        cursor={"pointer"}
+        onClick={() => navigate("/monthly")}
+      >
         Monthly
-      </Text>
+      </Button>
     </HStack>
   );
 };

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActivities } from "../../store/Reducers/activityReducer";
 import ActivityCard from "./ActivityCard";
 import LoadingSpinner from "../Spinner/Spinner";
-import { Box } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 const Activities = () => {
   const dispatch = useDispatch();
@@ -21,6 +21,10 @@ const Activities = () => {
 
   return (
     <Layout>
+      <Heading textAlign={"center"} mb={50}>
+        {" "}
+        Recent Activity
+      </Heading>
       {activities.length > 0 ? <ShowActivityCard /> : <LoadingSpinner />}
     </Layout>
   );
